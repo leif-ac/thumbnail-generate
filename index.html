@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thumbnail</title>
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="assets/thumbnail-backgrounds.js" defer></script>
+    <script src="src.js" defer></script>
+
+
+</head>
+<body>
+    <div id="page-overlay"></div>
+    <div class="text-box">
+        <textarea placeholder="Cole manualmente os títulos, divididos por quebra de linha." class="input-text-box" contenteditable="true" oninput="pre_insertHTML(); autoResize(this)"></textarea>
+        <div class="lower-input-box">
+            <section style="margin-right: 20px;color: #fb0e0e">
+                <span>Utilize "\\" ou "//" para delimitar o título. ("\\" Corta na esquerda. "//" corta na direita).</span>
+            </section>
+
+
+            <section>
+                <input id="dark-version" class="dark-checkbox" type="checkbox" oninput="pre_insertHTML()">
+                <label for="dark-version">Versão escura</label>
+                
+            </section>
+            <section>
+                <span>Versão das Thumbs</span>
+                <input class="version-input" type="text" placeholder="1">
+            </section>
+            <section>
+                <button class="download-button" onclick="downloadThumbnails()">
+                    Baixar Todas Thumbnails
+                </button>
+            </section>
+        </div>
+    </div>
+    <div class="box-content"> <!-- Aqui será colocado as Thumbs. Olhar o script que lá está a info. --> 
+        
+    </div>
+</body>
+</html>
