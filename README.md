@@ -9,6 +9,7 @@ Fundos disponíveis no projeto, antes da aplicação dos títulos:
 | Padrão | Escuro | Lateral |
 | :---: | :---: | :---: |
 | ![Fundo azul com área central para o título](assets/thumbnail-background-v2.png) | ![Fundo azul-escuro com área central para o título](assets/thumbnail-background-dark.png) | ![Fundo creme e terracota com área lateral para o título](assets/thumbnail-lateral.png) |
+
 *Imagens geradas via ChatGpt
 
 ## Recursos
