@@ -1,0 +1,33 @@
+/**Valores padrões que são aplicados nas thumbnails*/
+/* Caso deseje criar um layout custom. Crie ".id" para o textarea e ".id-contanier" para o container */
+
+:root {
+    --font-family-thumbnail: "Archivo";   
+
+    /* Valores default para posição de thumbnail*/
+    --w-area: 84%;
+    --h-area: 40%;
+
+    --translate-w: 0%;
+    --translate-h: -10%;
+
+    --font-color-thumbnail: white;
+    --font-min: 1rem; 
+    --font-max: none; 
+}
+
+.lateral {
+    --font-color-thumbnail: black;
+    --font-family-thumbnail: fantasy;
+
+    --font-max: 7rem;
+
+    text-align: start;
+}
+
+.lateral-container {
+    --w-area: 43%;
+    --h-area: 75%;
+    --translate-h: 0%;
+    --translate-w: -62%;
+}

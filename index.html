@@ -1,46 +1,71 @@
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thumbnail</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Gerador de Thumbnail</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700&display=swap" rel="stylesheet">
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-    <script src="assets/thumbnail-backgrounds.js" defer></script>
-    <script src="src.js" defer></script>
-
-
+    <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
-    <div id="page-overlay"></div>
-    <div class="text-box">
-        <textarea placeholder="Cole manualmente os títulos, divididos por quebra de linha." class="input-text-box" contenteditable="true" oninput="pre_insertHTML(); autoResize(this)"></textarea>
-        <div class="lower-input-box">
-            <section style="margin-right: 20px;color: #fb0e0e">
-                <span>Utilize "\\" ou "//" para delimitar o título. ("\\" Corta na esquerda. "//" corta na direita).</span>
-            </section>
-
-
-            <section>
-                <input id="dark-version" class="dark-checkbox" type="checkbox" oninput="pre_insertHTML()">
-                <label for="dark-version">Versão escura</label>
-                
-            </section>
-            <section>
-                <span>Versão das Thumbs</span>
-                <input class="version-input" type="text" placeholder="1">
-            </section>
-            <section>
-                <button class="download-button" onclick="downloadThumbnails()">
-                    Baixar Todas Thumbnails
-                </button>
-            </section>
+    <template id="thumbnail-template">
+        <div class="thumbnail flex-row gap" data-title="" data-index="">
+            <aside class="input-field flex-col justify-center align-center gap" onchange="calcIndexTitles()" >
+                <input type="checkbox" checked>
+                <input type="number">
+            </aside>
+            <div class="flex-col align-center">
+                <main class="flex justify-center align-center">
+                    <div class="container-title">
+                        <textarea oninput="calcFontSize(event.target)"></textarea>
+                    </div>
+                    <img src="??" draggable="false">
+                </main>
+                <footer class="mt">
+                    <button onclick="downloadThumbnail(event.target)">Baixar Thumbnail</button>
+                </footer>
+            </div>
         </div>
-    </div>
-    <div class="box-content"> <!-- Aqui será colocado as Thumbs. Olhar o script que lá está a info. --> 
+    </template>
+
+    <template id="option-checkbox">
+        <label id="?" class="btn-secondary flex-row align-center options-thumb">
+            <input class="" type="checkbox" name="?" onclick="toggleChoiceOption(event)">
+            <span>?</span>
+        </label>
+    </template>
+
+    <header class="container">
+        <textarea placeholder="Adicione os títulos que deseja gerar, divididos por quebra de linha..." id="field-titles" contenteditable="true" onchange="insertHtmlTitles(event)"></textarea>
+        <footer>
+            <div id="options" class="flex-row gap-1/2">
+               
+            </div>
+            <div class="text-red">Utilize "\\" ou "//" para delimitar o título. ("\\" Corta na esquerda. "//" corta na direita).</div>
+            <div class="version btn-secondary flex-row align-center">
+                <span>Versão da Thumbnail</span>
+                <input type="number" placeholder="1">
+            </div>
+            <div>
+                <button onclick="downloadAllThumbnails()">Baixar Todas Thumbnails</button>
+            </div>
+        </footer>
+    </header>
+    <main id="container-thumbnails" class="flex-col gap mt">
         
-    </div>
+    </main>
+
+    <script src="assets/base64/dark.js"></script>
+    <!-- <script src="assets/base64/default.js"></script>  Desativado pois é utilizado o arquivo PNG atualmente
+    <script src="assets/base64/lateral.js"></script>    Desativado pois é utilizado o arquivo PNG atualmente
+     --> 
+    <script src="lib/html2canvas/html2canvas.min.js"></script>
+    <script src="src/constructNameThumbnail.js"></script>
+    <script src="src/main.js"></script>
 </body>
 </html>

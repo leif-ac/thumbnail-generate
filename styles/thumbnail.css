@@ -1,0 +1,105 @@
+.input-field {
+    position: absolute;
+    right: 100%;
+    top: 50%;
+
+    transform: translate(-20% , -100%);
+}
+
+.input-field input[type="number"] {
+    --size: 4.5rem;
+
+    width: var(--size);
+    height: var(--size);
+
+    margin: 0px;
+    padding: 0px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+
+    color: white;
+    background: var(--bg-input);
+
+    text-align: center;
+    font-size: 2rem;
+}
+
+.input-field input[type="number"]:hover, .input-field input[type="number"]:focus {
+    margin: 0px;
+    border: none;
+    outline: none;
+    padding: 0px;
+}
+
+.input-field input[type="checkbox"] {
+    --size: 1.5rem;
+    --min-size: .5rem;
+
+    padding: 0px;
+    margin: 0px;
+
+    max-height: var(--size);
+    max-width: var(--size);
+    
+    height: var(--size);
+    width: var(--size);
+}
+
+.thumbnail {
+    width: 50%;
+    min-width: 30rem;
+    position: relative;
+
+    margin-inline: auto;
+}
+
+.thumbnail main {
+    position: relative;
+}
+
+.container-title {
+    position: absolute;
+
+    width: var(--w-area);
+    height: var(--h-area);
+    transform: translate(var(--translate-w), var(--translate-h));
+
+    margin: 0px;
+
+    display: grid;
+    align-items: center;
+    justify-items: center;
+}
+
+.container-title textarea {
+    font-family: var(--font-family-thumbnail), Webdings, Arial,  sans-serif;
+    /* font-size: max( var(--font-minSize-thumbnail), var(--font-maxSize-thumbnail) ); */
+    color: var(--font-color-thumbnail);
+
+    min-width: 20%;
+    min-height: auto;
+
+    max-height: 100%;
+    max-width: 100%;
+
+    border: none;
+    overflow: hidden;
+
+    line-height: 1.2;
+
+    text-align: center;
+}
+
+.thumbnail button {
+    font-size: 1.2rem;
+}
+
+.thumbnail-export .container-title .export-title {
+    display: block;
+    box-sizing: border-box;
+    min-height: 0;
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+    overflow: visible;
+}

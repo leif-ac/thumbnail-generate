@@ -1,0 +1,41 @@
+ .text-red {
+    color: var(--highlight);
+ }
+
+.flex {
+  display: flex;
+}
+
+ .flex-col {
+   display: flex;
+   flex-direction: column;
+ }
+
+ .flex-row {
+   display: flex;
+   flex-direction: row;
+ }
+
+ .justify-center {
+   justify-content: center;
+ }
+
+ .gap {
+  gap: 1rem;
+ }
+
+ .gap-1\/2 {
+  gap: .5rem;
+ }
+
+ .mt {
+  margin-top: 1rem;
+ }
+
+ .align-center {
+  align-items: center;
+ }
+
+ .hidden {
+  display: none;
+ }

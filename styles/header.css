@@ -1,0 +1,33 @@
+header {
+    display: flex;
+    flex-direction: column;
+
+    background: var(--bg-container);
+
+    width: 70%;
+    margin-inline: auto;
+
+    border-radius: 5px;
+}
+
+header footer {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+
+    margin-top: .65rem;
+
+    width: 100%;
+
+    align-items: center;
+    justify-content: space-between;
+}
+
+header .version {
+    cursor: auto;
+}
+
+header .version input[type="number"] {
+    text-align: center;
+    width: 2rem;
+}
