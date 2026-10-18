@@ -24,16 +24,6 @@ Fundos disponíveis no projeto, antes da aplicação dos títulos:
 - Versão no nome dos arquivos exportados.
 - Limite configurável de tamanho de arquivo.
 
-## Distribuição
-
-A build gera `dist/index.html`: um único arquivo que reúne os estilos, os scripts, os fundos em base64 e a biblioteca html2canvas, incluindo sua licença.
-
-Para usar a distribuição, basta abrir esse arquivo com duplo clique em um navegador moderno. Ele pode ser copiado para outra pasta ou computador sem as pastas do código-fonte. Não é necessário instalar Node, dependências npm ou um servidor local para utilizá-lo.
-
-A fonte Archivo continua sendo carregada pelo Google Fonts e exige internet quando não estiver disponível localmente. Portanto, o HTML reúne os arquivos da aplicação, mas ainda possui essa dependência externa de fonte.
-
-O código-fonte permanece separado em arquivos para desenvolvimento. Após alterar o projeto, gere novamente a build para atualizar a distribuição; evite editar `dist/index.html` manualmente.
-
 ## Como usar
 
 1. Cole os títulos no campo inicial, um por linha, e clique fora do campo para gerar as prévias.
@@ -100,9 +90,7 @@ As imagens exportadas são geradas no navegador, sem envio dos títulos ou dos P
 
 ### Fontes das thumbnails
 
-Nas thumbnails, **Webdings é usada intencionalmente como fonte alternativa** quando a fonte configurada não está disponível. Ela exibe símbolos no lugar das letras, tornando o problema de fonte evidente. Se o título aparecer com símbolos, não exporte a imagem: instale a fonte correta no computador e recarregue a página, ou restabeleça o acesso ao Google Fonts quando o layout usar Archivo.
-
-A fonte de cada layout é definida em `styles/template-thumbnail.css`, pela variável `--font-family-thumbnail`. Webdings também precisa estar disponível no sistema; caso não esteja, o navegador tenta Arial e, depois, a fonte genérica sem serifa. O layout Lateral usa a família genérica `fantasy`, cuja aparência varia conforme o sistema.
+Nas thumbnails, **Webdings é usada intencionalmente como fonte alternativa** quando a fonte configurada não está disponível. Ela exibe símbolos no lugar das letras, tornando o problema de fonte evidente. Se o título aparecer com símbolos.
 
 ## Licença
 
