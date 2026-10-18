@@ -58,10 +58,10 @@ Para manter várias linhas em uma única thumbnail, use os delimitadores em linh
 Conceitos fundamentais ]]
 ```
 
-Para extrair um título de uma linha com informações adicionais, use `\` antes do título e `//` depois:
+Para extrair um título de uma linha com informações adicionais, use `\\` antes do título e `//` depois:
 
 ```text
-Informação anterior\Título da aula//Informação posterior
+Informação anterior\\Título da aula//Informação posterior
 ```
 
 O título extraído será `Título da aula`.
@@ -103,7 +103,13 @@ lib/html2canvas/                 Biblioteca de exportação e licença
 
 HTML, CSS e JavaScript, com [html2canvas](https://github.com/niklasvh/html2canvas) para renderizar as thumbnails.
 
-As imagens exportadas são geradas no navegador, sem envio dos títulos ou dos PNGs gerados a um servidor. A fonte Archivo é carregada pelo Google Fonts e depende de internet; sem ela, o navegador usa as fontes alternativas disponíveis.
+As imagens exportadas são geradas no navegador, sem envio dos títulos ou dos PNGs gerados a um servidor. A fonte Archivo é carregada pelo Google Fonts e depende de internet.
+
+### Fontes das thumbnails
+
+Nas thumbnails, **Webdings é usada intencionalmente como fonte alternativa** quando a fonte configurada não está disponível. Ela exibe símbolos no lugar das letras, tornando o problema de fonte evidente. Se o título aparecer com símbolos, não exporte a imagem: instale a fonte correta no computador e recarregue a página, ou restabeleça o acesso ao Google Fonts quando o layout usar Archivo.
+
+A fonte de cada layout é definida em `styles/template-thumbnail.css`, pela variável `--font-family-thumbnail`. Webdings também precisa estar disponível no sistema; caso não esteja, o navegador tenta Arial e, depois, a fonte genérica sem serifa. O layout Lateral usa a família genérica `fantasy`, cuja aparência varia conforme o sistema.
 
 ## Licença
 

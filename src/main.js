@@ -35,7 +35,7 @@ function extractText(text) {
     if ( !text ) return [];
 
     const titles = text.split("\n").map( el => {
-        const start = el.split("\\");
+        const start = el.split("\\\\");
         const end = start.pop().split("//");
         return end[0].trim()
     });
