@@ -10,7 +10,7 @@ Fundos disponíveis no projeto, antes da aplicação dos títulos:
 | :---: | :---: | :---: |
 | ![Fundo azul com área central para o título](assets/thumbnail-background-v2.png) | ![Fundo azul-escuro com área central para o título](assets/thumbnail-background-dark.png) | ![Fundo creme e terracota com área lateral para o título](assets/thumbnail-lateral.png) |
 
-*Imagens geradas via ChatGpt
+*Imagens geradas via ChatGPT.*
 
 ## Recursos
 
@@ -24,26 +24,15 @@ Fundos disponíveis no projeto, antes da aplicação dos títulos:
 - Versão no nome dos arquivos exportados.
 - Limite configurável de tamanho de arquivo.
 
-## Como executar
+## Distribuição
 
-Baixe o projeto ou clone o repositório:
+A build gera `dist/index.html`: um único arquivo que reúne os estilos, os scripts, os fundos em base64 e a biblioteca html2canvas, incluindo sua licença.
 
-```sh
-git clone https://github.com/leif-ac/thumbnail-generate.git
-cd thumbnail-generate
-```
+Para usar a distribuição, basta abrir esse arquivo com duplo clique em um navegador moderno. Ele pode ser copiado para outra pasta ou computador sem as pastas do código-fonte. Não é necessário instalar Node, dependências npm ou um servidor local para utilizá-lo.
 
-Abra `index.html` por um servidor HTTP local, como a extensão Live Server do VS Code. Se tiver Python instalado, execute na raiz:
+A fonte Archivo continua sendo carregada pelo Google Fonts e exige internet quando não estiver disponível localmente. Portanto, o HTML reúne os arquivos da aplicação, mas ainda possui essa dependência externa de fonte.
 
-```sh
-python -m http.server 8000
-```
-
-Depois acesse **http://localhost:8000**.
-
-Não é necessário instalar dependências npm: a biblioteca de exportação está incluída em `lib/html2canvas/`.
-
-> A versão atual ainda usa PNGs locais em alguns layouts. Abrir o HTML com duplo clique pode permitir a prévia, mas restringir a exportação desses fundos. A distribuição em um único HTML para esse uso será preparada separadamente.
+O código-fonte permanece separado em arquivos para desenvolvimento. Após alterar o projeto, gere novamente a build para atualizar a distribuição; evite editar `dist/index.html` manualmente.
 
 ## Como usar
 
@@ -99,6 +88,8 @@ src/constructNameThumbnail.js   Nomes dos arquivos baixados
 styles/                         Estilos da interface e dos layouts
 assets/                         Fundos e imagens em base64
 lib/html2canvas/                 Biblioteca de exportação e licença
+scripts/build.cjs               Geração do HTML de distribuição
+dist/index.html                 Arquivo único gerado pela build
 ```
 
 ## Tecnologias e funcionamento
